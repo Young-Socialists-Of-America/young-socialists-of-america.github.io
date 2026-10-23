@@ -685,6 +685,7 @@ details[open] > summary .pm::after { transform: rotate(0deg); }
       <a href="#study">Reading list</a>
       <a href="#faq">FAQ</a>
       <a href="#rules">Rules</a>
+      <a href="#contact">Contact</a>
     </nav>
     <a class="btn btn--red btn--sm" href="#join">Join</a>
     <button class="menu-btn" id="menu-btn" type="button" aria-expanded="false" aria-controls="menu" aria-label="Open menu">
@@ -701,6 +702,7 @@ details[open] > summary .pm::after { transform: rotate(0deg); }
         <li><a href="#study">Reading list</a></li>
         <li><a href="#faq">FAQ</a></li>
         <li><a href="#rules">Rules</a></li>
+        <li><a href="#contact">Contact</a></li>
         <li><a href="#join">Join the YSA</a></li>
       </ul>
     </div>
@@ -1360,7 +1362,82 @@ details[open] > summary .pm::after { transform: rotate(0deg); }
     </aside>
   </div>
 </section>
+  <li><a href="#rules">Rules</a></li>
+<!-- Contact -->
+<section class="band band--paper contact" id="contact">
+  <style>
+    .contact .lede { color: var(--muted-light); }
+    .contact__grid { display: grid; gap: 40px; margin-top: 36px; }
+    .contact__grid > * { min-width: 0; }
+    .contact__form { display: grid; gap: 18px; }
+    .contact__row { display: grid; gap: 18px; }
+    .contact__field label { display: block; margin-bottom: 6px; font-family: var(--font-display); font-weight: 700; font-size: .9375rem; letter-spacing: .12em; text-transform: uppercase; }
+    .contact__field input, .contact__field textarea { width: 100%; padding: 12px 14px; font: inherit; font-size: 1rem; color: var(--ink); background: #fff; border: 2px solid var(--ink); border-radius: 2px; }
+    .contact__field textarea { min-height: 170px; resize: vertical; }
+    .contact__field input:focus, .contact__field textarea:focus { border-color: var(--crimson); outline: none; box-shadow: 0 0 0 3px rgba(107, 0, 0, .25); }
+    .contact__hp { display: none; }
+    .contact .btn--red:hover { background: var(--ink); border-color: var(--ink); color: var(--bone); }
+    .contact__note { margin: 0; font-size: .9375rem; color: var(--muted-light); }
+    .contact__sent { scroll-margin-top: 100px; padding: 14px 16px; background: var(--ink); color: var(--bone); border-left: 6px solid var(--signal); font-weight: 600; }
+    .contact__sent:not(:target) { display: none; }
+    .contact__aside { align-self: start; background: var(--ink); color: var(--bone); padding: clamp(24px, 5vw, 36px); border-top: 6px solid var(--signal); display: grid; gap: 22px; }
+    .contact__aside h3 { margin: 0 0 6px; font-family: var(--font-display); font-weight: 800; font-size: 1.75rem; line-height: 1; text-transform: uppercase; }
+    .contact__aside p { margin: 0 0 12px; color: var(--muted-dark); }
+    .contact__email { display: inline-block; font-weight: 600; font-size: 1.0625rem; overflow-wrap: anywhere; border-bottom: 1px solid currentColor; text-decoration: none; }
+    .contact__aside .btn { width: 100%; }
+    @media (min-width: 640px) { .contact__row { grid-template-columns: 1fr 1fr; } }
+    @media (min-width: 900px) { .contact__grid { grid-template-columns: minmax(0, 1.3fr) minmax(0, .8fr); gap: 64px; } }
+  </style>
+  <div class="wrap">
+    <p class="label">Contact</p>
+    <h2 class="h2">Get in touch</h2>
+    <p class="lede">Questions about the YSA, starting a chapter, or working with us? Send the council a message and we'll get back to you.</p>
 
+    <div class="contact__grid">
+      <form class="contact__form" action="https://formsubmit.co/youngsocialists.america@gmail.com" method="POST">
+        <p class="contact__sent" id="message-sent">Thanks, comrade. Your message was sent and the council will get back to you soon.</p>
+        <input type="hidden" name="_subject" value="New message from the YSA website">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_next" value="https://young-socialists-of-america.github.io/#message-sent">
+        <input class="contact__hp" type="text" name="_honey" tabindex="-1" autocomplete="off">
+        <div class="contact__row">
+          <div class="contact__field">
+            <label for="contact-name">Name</label>
+            <input id="contact-name" type="text" name="name" autocomplete="name" required>
+          </div>
+          <div class="contact__field">
+            <label for="contact-email">Email</label>
+            <input id="contact-email" type="email" name="email" autocomplete="email" required>
+          </div>
+        </div>
+        <div class="contact__field">
+          <label for="contact-message">Message</label>
+          <textarea id="contact-message" name="message" required></textarea>
+        </div>
+        <div>
+          <button class="btn btn--red" type="submit">Send message</button>
+        </div>
+        <p class="contact__note">Your message goes straight to the council's inbox.</p>
+      </form>
+
+      <aside class="contact__aside" aria-label="Other ways to reach us">
+        <div>
+          <h3>Email us</h3>
+          <p>Prefer your own email app? Write to us directly.</p>
+          <a class="contact__email" href="mailto:youngsocialists.america@gmail.com">youngsocialists.america@gmail.com</a>
+        </div>
+        <div>
+          <h3>Message us on TikTok</h3>
+          <p>Send us a DM on our TikTok.</p>
+          <a class="btn btn--red" href="https://www.tiktok.com/@y0ungsocialistsofamerica" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.6 5.8A4.3 4.3 0 0 1 15.5 3h-3.1v12.4a2.6 2.6 0 1 1-2.6-2.6c.3 0 .5 0 .8.1V9.7a5.7 5.7 0 1 0 4.9 5.7V9.1a7.4 7.4 0 0 0 4.3 1.4V7.4a4.3 4.3 0 0 1-3.2-1.6Z"/></svg>
+            @y0ungsocialistsofamerica
+          </a>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
 </main>
 
 <footer class="site-footer">
@@ -1375,6 +1452,7 @@ details[open] > summary .pm::after { transform: rotate(0deg); }
       <li><a href="#study">Reading list</a></li>
       <li><a href="#faq">FAQ</a></li>
       <li><a href="#rules">Rules</a></li>
+      <li><a href="#contact">Contact</a></li>
       <li><a href="https://discord.gg/SyfC3JSvNn" target="_blank" rel="noopener">Discord</a></li>
       <li><a href="https://www.tiktok.com/@y0ungsocialistsofamerica" target="_blank" rel="noopener">TikTok</a></li>
     </ul>
